@@ -24,7 +24,7 @@ body {
   }
 
   .foto-main{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagenes/hawaii.jpg);    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imagenes/hawaii.jpg");    
     height: 93vh;
     background-position: left; 
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
  .text-conf-bsas{
   margin-top: 20%;
   color: #ffffff;
-  padding: 45% 19% 0 0;
+  padding: 34% 19% 0 0;
   text-align: end;  
   
  }
@@ -48,7 +48,7 @@ body {
 
 }
 .boton{
-  padding: 0em 3em 0 0 !important;
+  padding: 0em 12% 5px 0 !important;
 }
 
 .b-example-divider {
