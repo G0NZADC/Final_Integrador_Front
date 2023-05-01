@@ -1,6 +1,7 @@
-
-
-
+body {
+  margin: 0 0 0 0; 
+  padding: 0 0 0 0;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -19,15 +20,18 @@
     padding-top:10em;
     background-image: url(/imagenes/hawaii.jpg);    
     height: 100vh;
-    background-position: left; 
+    background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
+    
  }
 
 .text-conf{
     color: #ffffff;
-    text-align: end;
-   margin-right: 0px;
+    text-align: right;
+   padding: 0 2em 0 0;
+   vertical-align: text-bottom;  
+
 }
 
 .b-example-divider {
