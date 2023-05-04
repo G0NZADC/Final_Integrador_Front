@@ -25,7 +25,7 @@ body {
 
   .foto-main{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imagenes/hawaii.jpg");    
-    height: 93vh;
+    height: 100vh;
     background-position: left; 
     background-repeat: no-repeat;
     background-size: cover;
