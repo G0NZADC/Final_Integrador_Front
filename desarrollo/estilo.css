@@ -10,78 +10,6 @@ body {
   margin-bottom: 0 !important;
 }
 
-
-
-.caja{
-  position: relative;
-  display: inline-block;
-  
-}
-
-.titulo{
-  position: absolute;
-  text-align: end;
-  top: 45%;
-  left: 50%;
-  right: 10%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 30px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-
-.descripcion{
-  position: absolute;
-  text-align: end;
-  top: 50%;
-  left: 50%;
-  right: 10%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 25px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.slider {
-	width: auto;
-  height: auto;
-	margin:50px auto 0;
-	overflow: hidden;
-}
-
-.slider ul {
-	display: flex;
-	padding: 0;
-	width: 300%;
-	
-	animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slider li {
-	width: 100%;
-	list-style: none;
-}
-
-.slider img {
-	width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: bottom;
-}
-
-@keyframes slide {
-	0% {margin-left: 0;}
-	30% {margin-left: 0;}
-	
-	35% {margin-left: -100%;}
-	65% {margin-left: -100%;}
-	
-	70% {margin-left: -200%;}
-	100% {margin-left: -200%;}
-}
-
-
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -108,7 +36,7 @@ body {
 
 
   .fondo{
-    margin: 0 0 0 0 !important;
+    margin: 0 !important;
     background-color: #2a4d57;
     padding-top: 10px;
 

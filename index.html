@@ -25,13 +25,13 @@
   <title>Final Integrador Front</title>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#nav">
 
-  <header>
+  <header >
 
       <!--Navegador -->
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="nav">
       <div class="container justify-content-md-end">
         <a class="navbar-brand" href="#"><img src="./imagenes/codoacodo.png" alt="Logo" width=150px>Conf Bs As</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -42,20 +42,20 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#scrollspyHeading1">La Conferencia</a>
+              <a class="nav-link active" aria-current="page" href="#la-conf">La Conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#scrollspyHeading2">Los oradores</a>
+              <a class="nav-link" href="#oradores">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#scrollspyHeading3">El lugar y la fecha</a>
+              <a class="nav-link" href="#lugar-fecha">El lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#scrollspyHeading4">Conviértete en orador</a>
+              <a class="nav-link " href="#conv-orador">Conviértete en orador</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-success" href="#scrollspyHeading5">Compra tickets</a>
+              <a class="nav-link text-success" href="">Compra tickets</a>
             </li>
           </ul>
         </div>
@@ -63,81 +63,40 @@
     </nav>
   </header>
 
-  <main  data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"data-bs-smooth-scroll="true" class="scrollspy-example bg-body-white p-0 rounded-0" tabindex="0">
-      <!--conf. Bs As.-->
-
-      <div class="slider justify-content-md col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2 " id="scrollspyHeading1" >
-        <ul>
-            <li> 
-                <div class=" caja ">
-
-                    <img src="./imagenes/ba1.jpg" class="list-group-image" style="filter: brightness(50%)">
-                    <div>
-                        <h2 class="titulo ">Conf Bs. As.</h2>
-                    </div>
-                    <div>
-                        <p class="descripcion" >Buenos Aires llega por primera vez a Argentina. Un evento para compartir con
-                        nuestra comuinidad el conocimiento y expereciencia de los expertos que están creando el futuro de internet.
-                        Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que
-                        tenemos para ti. Te esperamos!  <br/>
-                            
-                        <button type="button" class="btn btn-outline-light btn-lg ">Quiero ser orador</button>
-                        <button type="button" class="btn btn-success btn-lg ">Comprar tickets</button>
-                    
-                        </p>
-                        
-                    </div>               
-                    
-                 </div>
-            </li>
-            <li>
-                 <div class="caja">
-
-                    <img src="./imagenes/ba2.jpg" style="filter: brightness(50%)">
-                    <div>
-                        <h2 class="titulo">Conf Bs. As.</h2>
-                    </div>
-                    <div>
-                        <p class="descripcion" >Buenos Aires llega por primera vez a Argentina. Un evento para compartir con
-                        nuestra comuinidad el conocimiento y expereciencia de los expertos que están creando el futuro de internet.
-                        Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que
-                        tenemos para ti. Te esperamos!
-
-                        <button type="button" class="btn btn-outline-light btn-lg ">Quiero ser orador</button>
-                        <button type="button" class="btn btn-success btn-lg ">Comprar tickets</button>
-
-                        </p>
-                    </div>               
+  <main>
     
+    <!--conf. Bs As.-->
+
+    <section id="la-conf">      
+          <div id="carousel" class="carousel carousel-dark slide d-flex vh-100 bg-black align-items-center justify-content-end bg-opacity-50" data-bs-ride="carousel">
+            <div class="container-fluid text-white m-0 me-md-5 col-lg-5 text-end">
+                <h1 class="fw-semibold">Conf Bs As</h1>
+                <p class="fs-5">Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento
+                  y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros
+                  estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. ¡Te esperamos!</p>
+                <div class="d-flex justify-content-end column-gap-3">
+                    <a role="button" class="btn btn-outline-light" href="#conv-orador">Quiero ser orador</a>
+                    <button type="button" class="btn btn-success">Comprar tickets</button>
                 </div>
-            </li>
-            <li>
-                 <div class="caja">
+            </div>
 
-                <img src="./imagenes/ba3.jpg"  style="filter: brightness(50%)">
-                <div>
-                    <h2 class="titulo">Conf Bs. As.</h2>
+              <div class="carousel-inner position-absolute vh-100 z-n1">
+                <div class="carousel-item active">
+                  <img src="./imagenes/ba1.jpg" class="d-block" alt="Bs.As.1">
                 </div>
-                <div>
-                    <p class="descripcion" >Buenos Aires llega por primera vez a Argentina. Un evento para compartir con
-                    nuestra comuinidad el conocimiento y expereciencia de los expertos que están creando el futuro de internet.
-                    Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que
-                    tenemos para ti. Te esperamos!
-
-                    <button type="button" class="btn btn-outline-light btn-lg ">Quiero ser orador</button>
-                    <button type="button" class="btn btn-success btn-lg ">Comprar tickets</button>
-
-                    </p>
-            </div>               
-    
-            </div></li>
-        </ul>
-    </div>            
-    
+                <div class="carousel-item">
+                  <img src="./imagenes/ba2.jpg" class="d-block" alt="Imagen Buenos Aires 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="./imagenes/ba3.jpg" class="d-block" alt="Imagen Buenos Aires 3">
+                </div>
+              </div>
+          </div>
+      </section>
      <!--oradores -->
 
 
-       
+          <section  id="oradores">       
             <div class="container">
               <div class="row">
                 <h6 class="text-center" id="scrollspyHeading2">CONOCE A LOS</h6>
@@ -189,20 +148,20 @@
               </div>
             </div>
       
-
+          </section>
         <!--el lugar y la fecha -->
 
+        <section id="lugar-fecha">
 
-
-          <div class="card mb-6  mb-15" style="width:100%; " id="scrollspyHeading3">
+          <div class="card mb-6  mb-15" style="width:100%;">
                   <div class="row g-0">
                           <div class="col-md-6">
-                            <img src="./imagenes/honolulu.jpg" class="img-fluid " >
+                            <img src="./imagenes/honolulu.jpg" class="img-fluid">
                           </div>
                           <div class="col-md-6 text-white bg-dark border border-white me-0">
                                     <div class="card-body ">
-                                      <h5 class="card-title">Bs As - Octubre</h5>
-                                      <p class="card-text">Buens Aires es la provincia y localidad más grande del estado de Argentina, en los
+                                      <h3 class="card-title">Bs As - Octubre</h3>
+                                      <p class="card-text fs-4">Buenos Aires es la provincia y localidad más grande del estado de Argentina, en los
                                         Estados Unidos, Honolulu es la mas sureña de entre las pincipales clidades estadounidenses.
                                         Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y
                                         el condado de Honolulu han formado una ciudad-
@@ -214,9 +173,10 @@
                   </div>
           </div>
 
+        </section>
             <!-- conviértete en un orador -->
 
-
+            <section id="conv-orador">
               <div class="d-grid gap-2 col-6 mx-auto " >
                     <h6 class="text-center" ">CONVIÉRTETE EN UN</h6>
                     <h2 class="text-center">ORADOR</h2>
@@ -239,14 +199,13 @@
                   <button class=" btn btn-success " type="button">Enviar</button>
               </div>
           
-
-          
+            </section>
+            
   </main>
 
      <!-- pie de página -->
 
-     
-      <footer class="py-2 my-1 fondo">
+   <footer class="py-2 my-1 fondo">
         <ul class="nav justify-content-center pb-3 mb-01">
           <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Preguntas frecuentes</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contáctanos</a></li>
@@ -256,7 +215,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Privacidad</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Estudiantes</a></li>
         </ul>
-      </footer>
+   </footer>
  
 
 
