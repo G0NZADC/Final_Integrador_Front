@@ -62,112 +62,97 @@
       </div>
     </nav>
   </header>
-
-  <section>
-    <div class="modal col-6" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-           
-        <div class="modal-content">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
-          <div class="row row-cols-3 row-cols-md-3g-3 pt-5">
-            <div class="col text-center mb-3">
-              <div class="card border-primary rounded-0 border-2">
-                <div class="card-body ">
-                  <h5 class="card-title">Estudiante</h5>
-                  <p class="card-text">Tiene un descuento</p>
-                  <h5 class="card-title">80%</h5>
-                  <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+    <!--modal ticket.-->
+    <section>
+      <div class="modal col-6" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+            <div class="row row-cols-3 row-cols-md-3g-3 pt-5">
+              <div class="col text-center mb-3">
+                <div class="card border-primary rounded-0 border-2">
+                  <div class="card-body ">
+                    <h5 class="card-title">Estudiante</h5>
+                    <p class="card-text">Tiene un descuento</p>
+                    <h5 class="card-title">80%</h5>
+                    <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col text-center mb-3">
+                <div class="card border-success rounded-0 border-2">
+                  <div class="card-body">
+                    <h5 class="card-title">Trainee</h5>
+                    <p class="card-text">Tiene un descuento</p>
+                    <h5 class="card-title">50%</h5>
+                    <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col text-center mb-3">
+                <div class="card border-warning rounded-0 border-2">
+                  <div class="card-body content">
+                    <h5 class="card-title">Junior</h5>
+                    <p class="card-text">Tiene un descuento</p>
+                    <h5 class="card-title">20%</h5>
+                    <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col text-center mb-3">
-              <div class="card border-success rounded-0 border-2">
-                <div class="card-body">
-                  <h5 class="card-title">Trainee</h5>
-                  <p class="card-text">Tiene un descuento</p>
-                  <h5 class="card-title">50%</h5>
-                  <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col text-center mb-3">
-              <div class="card border-warning rounded-0 border-2">
-                <div class="card-body content">
-                  <h5 class="card-title">Junior</h5>
-                  <p class="card-text">Tiene un descuento</p>
-                  <h5 class="card-title">20%</h5>
-                  <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="text-center">
-            <p class="fs-6 ">VENTA</p>
-            <h2 class="modal-title fs-4" id="exampleModalLabel">VALOR DE TICKET $200</h2> 
-          </div>
+            <div class="text-center">
+              <p class="fs-6 ">VENTA</p>
+              <h2 class="modal-title fs-4" id="exampleModalLabel">VALOR DE TICKET $2000</h2> 
+            </div>
 
-          <div class="modal-body">
-            <form class="row g-2">
-              <div class="col-md">
-                <label for="validationDefault01" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="validationDefault01" value="" required>
-              </div>
-              <div class="col-md">
-                <label for="validationDefault02" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="validationDefault02" value="" required>
-              </div>
-              <div class="mb-3">
-                <label for="validationDefaultUsername" class="form-label">Correo Electrónico</label>
-                <div class="input-group">
-                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                  <input type="email" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+            <div class="modal-body">
+              <form class="row g-2" id="formluario">
+                <div class="col-md">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="name" id="name" value="" required>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <label for="validationDefault03" class="form-label">Cantidad</label>
-                <input type="number" class="form-control" id="validationDefault03" min="1" pattern="^[0-9]+" required>
-              </div>
-              <div class="col-md-6">
-                <label for="validationDefault04" class="form-label">Categoria</label>
-                <select class="form-select" id="validationDefault04" required>
-                  <option selected disabled value="">Seleccionar</option>
-                  <option selected>Sin descuento</option>
-                  <option value="1">Estudiante</option>
-                  <option value="2">Trainee</option>
-                  <option value="3">Junior</option>
-                </select>
-              </div>
-              
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                  <label class="form-check-label" for="invalidCheck2">
-                    Acepto los terminos y condiciones.
-                  </label>
+                <div class="col-md">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                 </div>
-              </div>
-              <div class="row mb-3 pt-3 ">  
-                <div class="text-center">
-                  <a class="col-6 form-control text-bg-info" id="" > Total a Pagar:</a>
-                  <a class=" col-6 form-control text-bg-info" id="" > $</a>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <div class="input-group">
+                    <input type="email" class="form-control" name="email" id="email"  aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                <div class="col-md-4 offset-md-4 ">
+                  <label for="regular-ticket">Sin descuento</label>
+                  <input type="number" class="form-control" id="regular-ticket" min="0" value="0">
+                                
+                  <label for="student-ticket">Estudiante:</label>
+                  <input type="number" class="form-control" id="student-ticket" min="0" value="0">
+                </div>
+                <div class="col-md-4 offset-md-4 ">
+                  <label for="trainer-ticket">Trainee</label>
+                  <input type="number" class="form-control" id="trainer-ticket" min="0" value="0">
+                
+                  <label for="junior-ticket">Junior</label>
+                  <input type="number" class="form-control" id="junior-ticket" min="0" value="0">
                 </div>
                 
-              </div>
-              <div class=" modal-footer row g-2 ">
-                <button class="btn btn-success col-md" type="submit">Borrar</button>
-                <button class="btn btn-success col-md" type="submit">Resumen</button>
-              </div>
-            </form>
+                <div class="alert alert-success" role="alert" id="aPagar">
+                  Total a Pagar : $ <span id="total-price"></span>
+                </div>
 
-
-
-
-          </div>
+                <div class=" modal-footer row g-2 ">
+                  <button class="btn btn-danger col-md" type="button" onclick="borrarFormulario()">Borrar</button>
+                  <button class="btn btn-success col-md" type="button" id="miBoton"  onclick="calculateTotalPrice()">Total a Pagar</button>
+                </div>
+              </form>
+            </div>
+          </div>  
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <main>
     
@@ -258,54 +243,54 @@
         <!--el lugar y la fecha -->
 
         <section id="lugar-fecha">
-
           <div class="card mb-6  mb-15" style="width:100%;">
-                  <div class="row g-0">
-                          <div class="col-md-6">
-                            <img src="./imagenes/honolulu.jpg" class="img-fluid">
-                          </div>
-                          <div class="col-md-6 text-white bg-dark border border-white me-0">
-                                    <div class="card-body ">
-                                      <h3 class="card-title">Bs As - Octubre</h3>
-                                      <p class="card-text fs-6">Buenos Aires es la provincia y localidad más grande del estado de Argentina, en los
-                                        Estados Unidos, Honolulu es la mas sureña de entre las pincipales clidades estadounidenses.
-                                        Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y
-                                        el condado de Honolulu han formado una ciudad-
-                                        condado consolidada que cbre toda la ciudad (aproximadamentes 600km2 de superficie).
-                                      </p>
-                                      <button type="button" class="btn btn-outline-light mb-25">Conocé mas</button>
-                                    </div>
-                          </div>
-                  </div>
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="./imagenes/honolulu.jpg" class="img-fluid" style="height: 100%;">
+              </div>
+              <div class="col-md-6 text-white bg-dark border border-white me-0">
+                <div class="card-body ">
+                  <h3 class="card-title">Bs As - Octubre</h3>
+                  <p class="card-text fs-6">Buenos Aires,es la capital y
+                  ciudad más poblada de la República Argentina. Esta metrópolis es una ciudad autónoma que constituye uno de los 24
+                  distritos, o que conforman el país. Tiene sus propios poderes ejecutivo,legislativo y judicial. Está situada en la
+                  región centro-este del país, sobre la orilla sur del Río de la Plata, fue cedida en 1880 por la Provincia de Buenos
+                  Aires para que fuera lacapital federal del país; a partir de 2020 es considerada capital principal, junto a 24 
+                  capitales alternas.
+                  </p>
+                  <button type="button"  href="#conv-orador" class="btn btn-outline-light mb-25">Conocé mas</button>
+                </div>
+              </div>
+            </div>
           </div>
 
         </section>
             <!-- conviértete en un orador -->
 
-            <section id="conv-orador">
-              <div class="d-grid gap-2 col-6 mx-auto pt-5" >
-                    <h6 class="text-center" ">CONVIÉRTETE EN UN</h6>
-                    <h2 class="text-center">ORADOR</h2>
-                    <div class="row g-3  mb-3">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
-                        </div>
-                    </div>
+        <section id="conv-orador">
+          <div class="d-grid gap-2 col-6 mx-auto pt-5" >
+            <h6 class="text-center" ">CONVIÉRTETE EN UN</h6>
+            <h2 class="text-center">ORADOR</h2>
+            <div class="row g-3  mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                </div>
+            </div>
 
-                    <div class="mb-20">
-                      <textarea class="form-control" placeholder="Sobre qué quieres hablar?" id="exampleFormControlTextarea1"
-                        rows="3"></textarea>
-                    </div>
+            <div class="mb-20">
+              <textarea class="form-control" placeholder="Sobre qué quieres hablar?" id="exampleFormControlTextarea1"
+                rows="3"></textarea>
+            </div>
 
-                  <P class="mb-3 text-center fs-6">Recuerda incluir un título para tu charla</P>
+          <P class="mb-3 text-center fs-6">Recuerda incluir un título para tu charla</P>
 
-                  <button class=" btn btn-success " type="button">Enviar</button>
-              </div>
-          
-            </section>
+            <button class=" btn btn-success " type="button">Enviar</button>
+          </div>
+      
+        </section>
             
   </main>
 
@@ -325,10 +310,10 @@
  
 
 
-    <!-- JavaScript bootstrap -->
+    <!-- JavaScript-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
-
+   <script src="./desarrollo/main.js"></script>
 </body>
 
 </html>
