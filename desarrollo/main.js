@@ -1,14 +1,16 @@
+
+
 const bsButton = new bootstrap.Button('#myButton')
 document.querySelectorAll('.btn').forEach(buttonElement => {
-    const button = bootstrap.Button.getOrCreateInstance(buttonElement)
+  const button = bootstrap.Button.getOrCreateInstance(buttonElement)
     button.toggle()
-  })
+ })
 
   function calculateTotalPrice() {
     const regularTicketPrice = 2000;
     const studentTicketPrice = regularTicketPrice * 0.2; 
     const trainerTicketPrice = regularTicketPrice * 0.5;
-    const juniorTicketPrice = regularTicketPrice * 0.8; 
+    const juniorTicketPrice = regularTicketPrice * 0.85; 
     
     let regularTicketQuantity = parseInt(document.getElementById('regular-ticket').value);
     let studentTicketQuantity = parseInt(document.getElementById('student-ticket').value);
@@ -22,10 +24,10 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
 
   function borrarFormulario() {
     document.getElementById("formluario").reset();
-    document.getElementById("aPagar").style.display = "none";
+    document.getElementById("aPagar").reset();
   }
 
   document.getElementById("miBoton").addEventListener("click", function() {
     document.getElementById("aPagar").style.display = "block";
   });
-  
+

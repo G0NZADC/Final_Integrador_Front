@@ -1,165 +1,184 @@
-<?php
-  // Configuración de la base de datos
-  $host = "files.000webhost.com"; 
-  $username = "id20976123_gdelcampo";
-  $password = "Titan.2023"; 
-  $database = "id20976123_tickets"; 
-
-  // Crear conexión a la base de datos
-  $mysqli = new mysqli($host, $username, $password, $database);
-
-  // Verificar la conexión
-  if ($mysqli->connect_error) {
-    die("Error al conectar a la base de datos: " . $mysqli->connect_error);
-  }
-
-  // Variables para almacenar los datos del formulario
-
-  $firstName = "";
-  $lastName = "";
-  $email = "";
-
-  // Variables para almacenar las cantidades de entradas seleccionadas
-
-  $generalQty = 0;
-  $studentQty = 0;
-  $traineeQty = 0;
-  $juniorQty = 0;
-
-  // Variables para almacenar los montos de las entradas seleccionadas
-
-  $generalAmount = 0;
-  $studentAmount = 0;
-  $traineeAmount = 0;
-  $juniorAmount = 0;
-
-  // Verificar si se ha enviado el formulario
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
-    $firstName = $_POST["firstName"];
-    $lastName = $_POST["lastName"];
-    $email = $_POST["email"];
-
-    
-    $generalQty = $_POST["general"];
-    $studentQty = $_POST["student"];
-    $traineeQty = $_POST["trainee"];
-    $juniorQty = $_POST["junior"];
-
-   
-    $generalAmount = $generalQty * 2000;
-    $studentAmount = $studentQty * 2000 * 0.8;
-    $traineeAmount = $traineeQty * 2000 * 0.5;
-    $juniorAmount = $juniorQty * 2000 * 0.2;
-
-    // Insertar los datos en la base de datos
-    $sql = "INSERT INTO tickets (first_name, last_name, email, general_qty, student_qty, trainee_qty, junior_qty)
-            VALUES ('$firstName', '$lastName', '$email', $generalQty, $studentQty, $traineeQty, $juniorQty)";
-
-    if ($mysqli->query($sql) === false) {
-      echo "Error al insertar los datos: " . $mysqli->error;
-    }
-  }
-?>
-
+ 
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-  <title>Venta de Entradas</title>
-  <style>
-    /* Estilos CSS para el formulario y la página */
-    body {
-      font-family: Arial, sans-serif;
-    }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    form {
-      margin-bottom: 20px;
-    }
+  <!-- CSS  -->
 
-    label {
-      display: inline-block;
-      width: 120px;
-    }
+  <link rel="stylesheet" href="./estilo.css">
 
-    button {
-      margin-top: 10px;
-    }
+  <!-- Bootstrap  -->
 
-    .summary {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#7952b3">
+
+  <title>Final Integrador Front y Back</title>
 </head>
-<body>
-  <h1>Venta de Entradas</h1>
 
-  <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label>Nombre:</label>
-    <input type="text" name="firstName" required value="<?php echo $firstName; ?>"><br>
+<body data-bs-spy="scroll" data-bs-target="#nav">
 
-    <label>Apellido:</label>
-    <input type="text" name="lastName" required value="<?php echo $lastName; ?>"><br>
+  <header >
 
-    <label>Email:</label>
-    <input type="email" name="email" required value="<?php echo $email; ?>"><br>
+      <!--Navegador -->
 
-    <label>Entrada General ($2000):</label>
-    <input type="number" name="general" min="0" value="<?php echo $generalQty; ?>"><br>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="nav">
+      <div class="container justify-content-md-end">
+        <a class="navbar-brand" href="../index.php"><img src="../imagenes/codoacodo.png" alt="Logo" width=150px>Conf Bs As</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <label>Entrada Estudiante (80% descuento):</label>
-    <input type="number" name="student" min="0" value="<?php echo $studentQty; ?>"><br>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.php">La Conferencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php#oradores">Los oradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php#lugar-fecha">El lugar y la fecha</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../index.php#conv-orador">Conviértete en orador</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <label>Entrada Trainee (50% descuento):</label>
-    <input type="number" name="trainee" min="0" value="<?php echo $traineeQty; ?>"><br>
 
-    <label>Entrada Junior (20% descuento):</label>
-    <input type="number" name="junior" min="0" value="<?php echo $juniorQty; ?>"><br>
 
-    <button type="submit" onclick="calculateAmounts()">Calcular</button>
-    <button type="button" onclick="resetForm()">Borrar</button>
-  </form>
+  <main>
 
-  <div class="summary">
-    <h2>Resumen de Compra:</h2>
-    <p>Nombre: <?php echo $firstName; ?> <?php echo $lastName; ?></p>
-    <p>Email: <?php echo $email; ?></p>
-    <p>Entrada General: <?php echo $generalQty; ?> ($<?php echo $generalAmount; ?>)</p>
-    <p>Entrada Estudiante: <?php echo $studentQty; ?> ($<?php echo $studentAmount; ?>)</p>
-    <p>Entrada Trainee: <?php echo $traineeQty; ?> ($<?php echo $traineeAmount; ?>)</p>
-    <p>Entrada Junior: <?php echo $juniorQty; ?> ($<?php echo $juniorAmount; ?>)</p>
-  </div>
+    <section class="pt-5">
+                
+          <div class="modal-dialog modal-dialog-centered modal-lg pt-5 ">
+              
+            <div class="modal-content">
 
-  <script>
-    // Función para calcular los montos de las entradas
-    function calculateAmounts() {
-      let generalQty = parseInt(document.getElementsByName("general")[0].value);
-      let studentQty = parseInt(document.getElementsByName("student")[0].value);
-      let traineeQty = parseInt(document.getElementsByName("trainee")[0].value);
-      let juniorQty = parseInt(document.getElementsByName("junior")[0].value);
+              <div class="row row-cols-3 row-cols-md-3g-3 pt-5">
+                <div class="col text-center mb-3">
+                  <div class="card border-primary rounded-0 border-2">
+                    <div class="card-body pt-5">
+                      <h5 class="card-title">Estudiante</h5>
+                      <p class="card-text">Tiene un descuento</p>
+                      <h5 class="card-title">80%</h5>
+                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col text-center mb-3">
+                  <div class="card border-success rounded-0 border-2">
+                    <div class="card-body pt-5">
+                      <h5 class="card-title">Trainee</h5>
+                      <p class="card-text">Tiene un descuento</p>
+                      <h5 class="card-title">50%</h5>
+                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col text-center mb-3">
+                  <div class="card border-warning rounded-0 border-2">
+                    <div class="card-body pt-5">
+                      <h5 class="card-title">Junior</h5>
+                      <p class="card-text">Tiene un descuento</p>
+                      <h5 class="card-title">15%</h5>
+                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      let generalAmount = generalQty * 2000;
-      let studentAmount = studentQty * 2000 * 0.8;
-      let traineeAmount = traineeQty * 2000 * 0.5;
-      let juniorAmount = juniorQty * 2000 * 0.2;
+              <div class="text-center">
+                <p class="fs-6 ">VENTA</p>
+                <h2 class="modal-title fs-4" id="exampleModalLabel">VALOR DE TICKET $2000</h2> 
+              </div>
 
-      const summaryElement = document.querySelector(".summary");
-      summaryElement.innerHTML = "<h2>Resumen de Compra:</h2>" +
-                                 "<p>Nombre: <?php echo $firstName; ?> <?php echo $lastName; ?></p>" +
-                                 "<p>Email: <?php echo $email; ?></p>" +
-                                 "<p>Entrada General: " + generalQty + " ($" + generalAmount + ")</p>" +
-                                 "<p>Entrada Estudiante: " + studentQty + " ($" + studentAmount + ")</p>" +
-                                 "<p>Entrada Trainee: " + traineeQty + " ($" + traineeAmount + ")</p>" +
-                                 "<p>Entrada Junior: " + juniorQty + " ($" + juniorAmount + ")</p>";
-    }
+              <div class="modal-body">
+                <form class="row g-2" id="formluario">
+                  <div class="col-md">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name" value="" required>
+                  </div>
+                  <div class="col-md">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <div class="input-group">
+                      <input type="email" class="form-control" name="email" id="email" aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                  </div>
 
-    // Función para borrar el formulario
-    function resetForm() {
-      document.querySelector("form").reset();
-      var summaryElement = document.querySelector(".summary");
-      summaryElement.innerHTML = "";
-    }
-  </script>
+                
+                  <div class="col-md-6 card border-dark rounded-2 border-2 ">
+                      <label for="regular-ticket">Sin descuento</label>
+                    </div>    
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" id="regular-ticket" min="0" value="0">
+                    </div>    
+                    <div class="col-md-6 card border-primary rounded-2 border-2">    
+                      <label for="student-ticket">Estudiante:</label>
+                    </div>     
+                    <div class="col-md-6 ">
+                      <input type="number" class="form-control" id="student-ticket" min="0" value="0">
+                    </div>
+                    <div class="col-md-6 card border-success rounded-2 border-2">
+                      <label for="trainer-ticket">Trainee</label>
+                    </div> 
+                    <div class="col-md-6 ">  
+                      <input type="number" class="form-control" id="trainer-ticket" min="0" value="0">
+                    </div>  
+                    <div class="col-md-6 card border-warning rounded-2 border-2">
+                      <label for="junior-ticket">Junior</label>
+                    </div> 
+                      <div class="col-md-6 ">
+                      <input type="number" class="form-control" id="junior-ticket" min="0" value="0">
+                    </div>
+                  
+                    <div class="alert alert-info" id="aPagar">
+                      Total a Pagar : $ <span id="total-price"></span>
+                    </div>
+
+                    <div class=" modal-footer row g-2 ">
+                      <button class="btn btn-danger col-md-6 " type="button" onclick="borrarFormulario()">Borrar</button>
+                      <button class="btn btn-success col-md-6 " type="button" id="miBoton" onclick="calculateTotalPrice()">Resumen</button>
+                    </div>
+                    <div>
+                      <button class="btn btn-primary col-12" type="button">Comprar</button>
+                    </div>
+                </form>
+              </div>
+            </div>  
+          </div>
+        
+      </section>
+              
+    </main>
+
+     <!-- pie de página -->
+
+     <?php include("piedepagina.php") ?>
+
+    <!-- JavaScript-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
+   <script src="main.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,12 @@
+@import "transition-style";
+
+
 
 body {
   margin: 0  !important; 
   padding: 0  !important;
+
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 
 .row{
@@ -36,13 +41,22 @@ body {
 
 
   .fondo{
-    margin: 0 !important;
+    
     background-color: #2a4d57;
     padding-top: 10px;
-
+    
   }
- 
-  #aPagar{
-    display: none;
+
+  @keyframes square-out-bottom-right {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(100% 0 0 100%);
+    }
+  }
+  
+  [transition-style="out:square:bottom-right"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-out-bottom-right both;
   }
 
