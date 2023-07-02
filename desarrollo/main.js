@@ -31,3 +31,33 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
     document.getElementById("aPagar").style.display = "block";
   });
 
+
+
+
+      // Obtén los valores de los campos del formulario
+    var id = document.getElementById('id').value;
+    var nombre = document.getElementById('nombre').value;
+    var apellido = document.getElementById('apellido').value;
+    var email = document.getElementById('email').value;
+    var tipoEntrada = document.getElementById('tipo_entrada').value;
+
+    // Crea un objeto de datos con los valores
+    var datos = {
+      id: id,
+      nombre: nombre,
+      apellido: apellido,
+      email: email,
+      tipo_entrada: tipoEntrada
+    };
+
+    // Realiza una solicitud AJAX para enviar los datos a PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'guardar_datos.php', true);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Se ha completado la solicitud y se han guardado los datos
+        alert('Los datos se han guardado correctamente.');
+      }
+    };
+    xhr.send(JSON.stringify(datos));
