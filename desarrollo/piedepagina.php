@@ -3,7 +3,7 @@
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Preguntas frecuentes</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Contáctanos</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Prensa</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Conferencias</a></li>
+          <li class="nav-item"><a href="../index.php" class="nav-link px-5 text-white">Conferencias</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Términos y condiciones</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Privacidad</a></li>
           <li class="nav-item"><a href="./tickets.php" class="nav-link px-5 text-white">Tickets</a></li>
