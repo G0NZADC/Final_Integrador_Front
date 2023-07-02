@@ -74,22 +74,19 @@
                    </tr>
                 </thead>
                 <tbody>
-                   <tr>
-                     <th>ID</th>
-                      <th>Nombre</th>
-                      <th>Apellido</th>
-                      <th>Email</th>
-                      <th>Tipo de entrada</th>  
-                    </tr>
-                <?php foreach ($resultados as $fila) { ?>
+                <?php include("extraerdatos.php") ?>
+                 <?php foreach ($resultados as $fila) { ?>
                   <tr>
                   <td><?php echo $fila['ID']; ?></td>
                     <td><?php echo $fila['nombre']; ?></td>
                     <td><?php echo $fila['apellido']; ?></td>
                     <td><?php echo $fila['email']; ?></td>
+                    <td><?php echo $fila['cantidad']; ?></td>
                     <td><?php echo $fila['tipo_entrada']; ?></td>
                   </tr>
                 <?php } ?>
+
+
               </tbody>
             </table>
         </div>

@@ -33,6 +33,45 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
 
 
 
+  function enviarDatos() {
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("name").value;
+    const apellido = document.getElementById("apellido").value;
+    const email = document.getElementById("email").value;
+    const ticket = document.getElementById("regular-ticket","student-ticket","trainer-ticket","junior-ticket").value;
+  
+    // Crear un objeto con los datos a enviar
+    const datos = {
+      nombre: nombre,
+      apellido: apellido,
+      email: email,
+      ticket: ticket
+    };
+  
+      // Realizar la solicitud HTTP para enviar los datos a la base de datos
+
+  fetch("https://databases-auth.000webhost.com/index.php?route=/database/structure&db=id20976123_tickets", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(datos)
+  })
+  .then(response => {
+    // Verificar la respuesta de la solicitud
+    if (response.ok) {
+      console.log("Los datos se enviaron correctamente a la base de datos.");
+      // Aquí puedes agregar cualquier otra acción que desees realizar después de enviar los datos
+    } else {
+      console.error("Error al enviar los datos a la base de datos.");
+    }
+  })
+  .catch(error => {
+    console.error("Error en la solicitud:", error);
+  });
+  }
+  
+
 
       // Obtén los valores de los campos del formulario
     var id = document.getElementById('id').value;

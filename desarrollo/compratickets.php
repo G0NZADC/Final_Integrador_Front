@@ -111,8 +111,8 @@
               <div class="modal-body">
                 <form class="row g-2" id="formluario">
                   <div class="col-md">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="name" id="name" value="" required>
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" value="" required>
                   </div>
                   <div class="col-md">
                     <label for="apellido" class="form-label">Apellido</label>
@@ -160,7 +160,7 @@
                       <button class="btn btn-success col-md-6 " type="button" id="miBoton" onclick="calculateTotalPrice()">Resumen</button>
                     </div>
                     <div>
-                      <button class="btn btn-primary col-12" type="button">Comprar</button>
+                      <button class="btn btn-primary col-12" type="button" onclick="enviarDatos()">Comprar</button>
                     </div>
                 </form>
               </div>
