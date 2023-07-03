@@ -84,7 +84,7 @@
                     <td><?php echo $fila['cantidad']; ?></td>
                     <td><?php echo $fila['tipo_entrada']; ?></td>
                   </tr>
-                <?php } ?>
+                <?php } ?>  
 
 
               </tbody>
