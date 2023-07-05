@@ -6,19 +6,7 @@ $email = $_POST ["email"];
 $cantidad = $_POST ["cantidad"];
 $categoria = $_POST ["categoria"];
 
-
-
-$servidor = "localhost";
-$usuario = "gonzalodelcampo-fullstackphp";
-$clave ="Titan.2023";
-
-$conexion = mysqli_connect($servidor,$usuario,$clave);
-
-// mysqli_close($conexion); cierra la conexion
-
-$baseDartos = "id20976123_tickets";
-
-mysqli_select_db($conexion, $baseDartos);
+include 'conexion.php';
 
 // $sql = "SELECT * FROM tickets_compra";
 
