@@ -65,109 +65,97 @@
   <main>
 
     <section class="pt-5">
-                
-          <div class="modal-dialog modal-dialog-centered modal-lg pt-5 ">
-              
-            <div class="modal-content">
+      <div class="modal-dialog modal-dialog-centered modal-lg pt-5 ">
+        <div class="modal-content">
+          <div class="row row-cols-3 row-cols-md-3g-3 pt-5">
+            <div class="col text-center mb-3">
+              <div class="card border-primary rounded-0 border-2">
+                <div class="card-body pt-5">
+                  <h5 class="card-title">Estudiante</h5>
+                  <p class="card-text">Tiene un descuento</p>
+                  <h5 class="card-title">80%</h5>
+                  <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                </div>
+              </div>
 
-              <div class="row row-cols-3 row-cols-md-3g-3 pt-5">
-                <div class="col text-center mb-3">
-                  <div class="card border-primary rounded-0 border-2">
-                    <div class="card-body pt-5">
-                      <h5 class="card-title">Estudiante</h5>
-                      <p class="card-text">Tiene un descuento</p>
-                      <h5 class="card-title">80%</h5>
-                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-center mb-3">
-                  <div class="card border-success rounded-0 border-2">
-                    <div class="card-body pt-5">
-                      <h5 class="card-title">Trainee</h5>
-                      <p class="card-text">Tiene un descuento</p>
-                      <h5 class="card-title">50%</h5>
-                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col text-center mb-3">
-                  <div class="card border-warning rounded-0 border-2">
-                    <div class="card-body pt-5">
-                      <h5 class="card-title">Junior</h5>
-                      <p class="card-text">Tiene un descuento</p>
-                      <h5 class="card-title">15%</h5>
-                      <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
-                    </div>
+              </div>
+              <div class="col text-center mb-3">
+                 <div class="card border-success rounded-0 border-2">
+                  <div class="card-body pt-5">
+                    <h5 class="card-title">Trainee</h5>
+                    <p class="card-text">Tiene un descuento</p>
+                    <h5 class="card-title">50%</h5>
+                    <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
                   </div>
                 </div>
               </div>
 
-              <div class="text-center">
-                <p class="fs-6 ">VENTA</p>
-                <h2 class="modal-title fs-4" id="exampleModalLabel">VALOR DE TICKET $2000</h2> 
+              <div class="col text-center mb-3">
+                <div class="card border-warning rounded-0 border-2">
+                  <div class="card-body pt-5">
+                    <h5 class="card-title">Junior</h5>
+                    <p class="card-text">Tiene un descuento</p>
+                    <h5 class="card-title">15%</h5>
+                    <p class="card-text"><small class="text-muted">* presentar documentación</small></p>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div class="modal-body">
-                <form class="row g-2" id="formluario">
-                  <div class="col-md">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" value="" required>
+            <div class="text-center">
+              <p class="fs-6 ">VENTA</p>
+              <h2 class="modal-title fs-4" id="exampleModalLabel">VALOR DE TICKET $2000</h2> 
+            </div>
+          
+             <form class="row g-2" id="formluario" method="post" action="datosCompra.php">
+                <div class="col-md">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" id="nombre" value="" required>
+                </div>
+                <div class="col-md">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
+                </div>
+                <div class="">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <div class="input-group">
+                    <input type="email" class="form-control" name="email" id="email" required>
                   </div>
-                  <div class="col-md">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <div class="input-group">
-                      <input type="email" class="form-control" name="email" id="email" aria-describedby="inputGroupPrepend2" required>
-                    </div>
-                  </div>
-
-                
-                  <div class="col-md-6 card border-dark rounded-2 border-2 ">
-                      <label for="regular-ticket">Sin descuento</label>
-                    </div>    
-                    <div class="col-md-6">
-                      <input type="number" class="form-control" id="regular-ticket" min="0" value="0">
-                    </div>    
-                    <div class="col-md-6 card border-primary rounded-2 border-2">    
-                      <label for="student-ticket">Estudiante:</label>
-                    </div>     
-                    <div class="col-md-6 ">
-                      <input type="number" class="form-control" id="student-ticket" min="0" value="0">
-                    </div>
-                    <div class="col-md-6 card border-success rounded-2 border-2">
-                      <label for="trainer-ticket">Trainee</label>
-                    </div> 
-                    <div class="col-md-6 ">  
-                      <input type="number" class="form-control" id="trainer-ticket" min="0" value="0">
-                    </div>  
-                    <div class="col-md-6 card border-warning rounded-2 border-2">
-                      <label for="junior-ticket">Junior</label>
-                    </div> 
-                      <div class="col-md-6 ">
-                      <input type="number" class="form-control" id="junior-ticket" min="0" value="0">
-                    </div>
+                </div>
                   
-                    <div class="alert alert-info" id="aPagar">
-                      Total a Pagar : $ <span id="total-price"></span>
-                    </div>
-
+                <div class="col-md-6">
+                  <label class="form-label" >Cantidad</label>
+                  <input type="number" class="form-control" name="cantidad" id="cantidad"  min="1" value="1" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Categoría</label>
+                  <select class="form-select" id="categoria" name="categoria">
+                    <option selected disabled  value="0">Seleccione una categoría</option>
+                    <option value="general">General</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="trainee">Trainee</option>
+                    <option value="junior">Junior</option>
+                  </select>
+                </div>
+              
+                <div class="col-12">
+                  <div class="alert alert-info" >
+                    Total a Pagar : $ <span id="aPagar" ></span>
+                  </div>
+                </div>
                     <div class=" modal-footer row g-2 ">
-                      <button class="btn btn-danger col-md-6 " type="button" onclick="borrarFormulario()">Borrar</button>
-                      <button class="btn btn-success col-md-6 " type="button" id="miBoton" onclick="calculateTotalPrice()">Resumen</button>
+                      <button class="btn btn-danger col-md-6 " type="reset" value="borrarDatos">Borrar</button>
+                      <button class="btn btn-success col-md-6 " type="button" value="Resumen de Compra" onclick="mostrarResumen()">Resumen</button>
                     </div>
                     <div>
-                      <button class="btn btn-primary col-12" type="button" onclick="enviarDatos()">Comprar</button>
+                      <button class="btn btn-primary col-12" type="submite" >Comprar</button>
                     </div>
-                </form>
-              </div>
-            </div>  
+                </form>                
+              
           </div>
-        
-      </section>
+         </div>  
+      </div> 
+    </section>
               
     </main>
 

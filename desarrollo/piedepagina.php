@@ -1,4 +1,4 @@
-<footer class="py-2 my-1 fondo sticky-bottom">
+<footer class="py-2 my-1 fondo fixed-bottom">
         <ul class="nav justify-content-center pb-1 mb-1">
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Preguntas frecuentes</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Contáctanos</a></li>

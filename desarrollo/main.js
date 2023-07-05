@@ -6,97 +6,45 @@ document.querySelectorAll('.btn').forEach(buttonElement => {
     button.toggle()
  })
 
-  function calculateTotalPrice() {
-    const regularTicketPrice = 2000;
-    const studentTicketPrice = regularTicketPrice * 0.2; 
-    const trainerTicketPrice = regularTicketPrice * 0.5;
-    const juniorTicketPrice = regularTicketPrice * 0.85; 
+
+function mostrarResumen() {
+  let nombre = document.getElementById("nombre").value;
+  let apellido = document.getElementById("apellido").value;
+  let email = document.getElementById("email").value;
+  let cantidad = document.getElementById("cantidad").value;
+  let categoria = document.getElementById("categoria").value;
+
+  let precio = 2000;
+  let descuento = 0;
+  if (categoria === "estudiante") {
+        descuento = 0.2;
+    } else if (categoria === "trainee") {
+        descuento = 0.5;
+    } else if (categoria === "junior") {
+        descuento = 0.85;
+    } else  if(categoria === "general"){
+      descuento = 1;
+    } 
+
+  let precioFinal = (precio * descuento) * cantidad;
+
+  let objetivo = document.getElementById('aPagar');
+      objetivo.innerHTML = precioFinal;
     
-    let regularTicketQuantity = parseInt(document.getElementById('regular-ticket').value);
-    let studentTicketQuantity = parseInt(document.getElementById('student-ticket').value);
-    let trainerTicketQuantity = parseInt(document.getElementById('trainer-ticket').value);
-    let juniorTicketQuantity = parseInt(document.getElementById('junior-ticket').value);
-    
-    let totalPrice = (regularTicketPrice * regularTicketQuantity) + (studentTicketPrice * studentTicketQuantity) + (trainerTicketPrice * trainerTicketQuantity) + (juniorTicketPrice * juniorTicketQuantity);
-    
-    document.getElementById('total-price').textContent =  totalPrice;
-  }
-
-  function borrarFormulario() {
-    document.getElementById("formluario").reset();
-    document.getElementById("aPagar").reset();
-  }
-
-  document.getElementById("miBoton").addEventListener("click", function() {
-    document.getElementById("aPagar").style.display = "block";
-  });
-
-
-
-  function enviarDatos() {
-    // Obtener los valores del formulario
-    const nombre = document.getElementById("name").value;
-    const apellido = document.getElementById("apellido").value;
-    const email = document.getElementById("email").value;
-    const ticket = document.getElementById("regular-ticket","student-ticket","trainer-ticket","junior-ticket").value;
   
-    // Crear un objeto con los datos a enviar
-    const datos = {
-      nombre: nombre,
-      apellido: apellido,
-      email: email,
-      ticket: ticket
-    };
+}
+
+function borrarDatos() {
+  document.getElementById("formluario").reset();
+
   
-      // Realizar la solicitud HTTP para enviar los datos a la base de datos
+}
 
-  fetch("https://databases-auth.000webhost.com/index.php?route=/database/structure&db=id20976123_tickets", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(datos)
-  })
-  .then(response => {
-    // Verificar la respuesta de la solicitud
-    if (response.ok) {
-      console.log("Los datos se enviaron correctamente a la base de datos.");
-      // Aquí puedes agregar cualquier otra acción que desees realizar después de enviar los datos
-    } else {
-      console.error("Error al enviar los datos a la base de datos.");
-    }
-  })
-  .catch(error => {
-    console.error("Error en la solicitud:", error);
-  });
-  }
-  
+// comprar y borrar
 
-
-      // Obtén los valores de los campos del formulario
-    var id = document.getElementById('id').value;
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var email = document.getElementById('email').value;
-    var tipoEntrada = document.getElementById('tipo_entrada').value;
-
-    // Crea un objeto de datos con los valores
-    var datos = {
-      id: id,
-      nombre: nombre,
-      apellido: apellido,
-      email: email,
-      tipo_entrada: tipoEntrada
-    };
-
-    // Realiza una solicitud AJAX para enviar los datos a PHP
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'guardar_datos.php', true);
-    xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // Se ha completado la solicitud y se han guardado los datos
-        alert('Los datos se han guardado correctamente.');
-      }
-    };
-    xhr.send(JSON.stringify(datos));
+document.addEventListener('DOMContentLoaded', function(){
+  let borrarFormulario = document.getElementById('formulario');
+  borrarFormulario.addEventListener('submit', function() {
+  borrarFormulario.reset();
+});
+});

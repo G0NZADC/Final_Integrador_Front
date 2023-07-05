@@ -74,26 +74,15 @@
                    </tr>
                 </thead>
                 <tbody>
-                <?php include("extraerdatos.php") ?>
-                 <?php foreach ($resultados as $fila) { ?>
-                  <tr>
-                  <td><?php echo $fila['ID']; ?></td>
-                    <td><?php echo $fila['nombre']; ?></td>
-                    <td><?php echo $fila['apellido']; ?></td>
-                    <td><?php echo $fila['email']; ?></td>
-                    <td><?php echo $fila['cantidad']; ?></td>
-                    <td><?php echo $fila['tipo_entrada']; ?></td>
-                  </tr>
-                <?php } ?>  
-
-
+                <?php require_once 'conexion.php';?>
+             
               </tbody>
             </table>
         </div>
     </main>
      <!-- pie de página -->
 
-     <footer class="py-2 my-1 fondo sticky-bottom">
+     <footer class="py-2 my-1 fondo fixed-bottom">
         <ul class="nav justify-content-center pb-1 mb-1">
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Preguntas frecuentes</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Contáctanos</a></li>
@@ -101,7 +90,7 @@
           <li class="nav-item"><a href="../index.php" class="nav-link px-5 text-white">Conferencias</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Términos y condiciones</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-5 text-white">Privacidad</a></li>
-          <li class="nav-item"><a href="./tickets.php" class="nav-link px-5 text-white">Estudiante</a></li>
+          <li class="nav-item"><a href="../index.php" class="nav-link px-5 text-white">Inicio</a></li>
         </ul>
    </footer>
     <!-- JavaScript-->
